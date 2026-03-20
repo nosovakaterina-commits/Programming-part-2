@@ -1,0 +1,14 @@
+# Target labels
+ googletest-populate
+# Source files and their labels
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
+/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule
