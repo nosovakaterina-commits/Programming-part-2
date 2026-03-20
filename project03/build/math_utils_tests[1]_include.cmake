@@ -1,5 +1,0 @@
-if(EXISTS "/home/cer_nosova_kate/programming-part-2/project03/build/math_utils_tests[1]_tests.cmake")
-  include("/home/cer_nosova_kate/programming-part-2/project03/build/math_utils_tests[1]_tests.cmake")
-else()
-  add_test(math_utils_tests_NOT_BUILT math_utils_tests_NOT_BUILT)
-endif()
