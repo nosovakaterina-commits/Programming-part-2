@@ -1,3 +1,0 @@
-/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/cer_nosova_kate/programming-part-2/project04/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
