@@ -9,4 +9,3 @@ Makefile
 *.out
 *.exe
 .vscode/
-.idea/
