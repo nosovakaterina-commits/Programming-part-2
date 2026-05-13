@@ -10,7 +10,7 @@ public:
     bool getScholarship() const;
     int getAbsences() const;
 
-    void setId(int value);
+    void setId(int value) ;
     void setCourse(int value);
     void setAverageGrade(double value);
     void setScholarship(bool value);
