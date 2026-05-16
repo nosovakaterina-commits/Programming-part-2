@@ -1,0 +1,32 @@
+#pragma once 
+
+class Student {
+    public:
+    Student(int id, int cours, double averageGrade, bool scholarship, int absences);
+
+    int getId() const;
+    int getCourse() const;
+    double getAverageGrade() const ;
+    bool getScholarship() const;
+    int getAbsences() const;
+
+    void setId(int value);
+    void setCourse(int value);
+    void setAverageGrade(double value);
+    void setScholarship(bool value);
+    void setAbsences(int value);
+
+    void promoteToNextCourse();
+    void updateAverageGrade(double value);
+    bool isExcellentStudent() const;
+    bool canReceiveScholarship() const;
+    void addAbsence();
+
+    private:
+   int id;
+   int course;
+   double averageGrade;
+   bool scholarship;
+   int absences;
+
+};

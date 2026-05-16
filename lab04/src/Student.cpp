@@ -1,11 +1,11 @@
 #include "Student.hpp"
 
-Student::Student(int id, int course, double averageGrade, bool scholarship, int absence)
-: id(id),
+Student::Student(int id, int course, double averageGrade, bool scholarship, int absences)
+: id(id >= 0 ? id : 0),
 course(course > 0 && course <= 4 ? course : 1),
 averageGrade(averageGrade >= 0 && averageGrade <= 100 ? averageGrade : 0),
 scholarship(scholarship),
-absence(absence >= 0 ? absence : 0 ) {}
+absences(absences >= 0 ? absences : 0 ) {}
 
 int Student::getId() const {
     return id;
@@ -19,12 +19,14 @@ double Student::getAverageGrade() const {
 bool Student::getScholarship() const {
     return scholarship;
 }
-int Student::getAbsence() const {
-    return absence;
+int Student::getAbsences() const {
+    return absences;
 }
 
 void Student::setId(int value) {
+    if (value >= 0) {
     id = value;
+    }
 }
 void Student::setCourse(int value) {
     if (value >= 1 && value <= 4) {
@@ -39,9 +41,9 @@ void Student::setAverageGrade(double value) {
 void Student::setScholarship(bool value) {
     scholarship = value;
 }
-void Student::setAbsence(int value) {
+void Student::setAbsences(int value) {
     if (value >= 0) {
-        absence = value;
+        absences = value;
     }
 }
 
@@ -57,8 +59,8 @@ bool Student::isExcellentStudent() const {
     return averageGrade >= 90.0;
 }
 bool Student::canReceiveScholarship() const {
-    return (averageGrade >= 75.0 && absence <= 50);
+    return (averageGrade >= 75.0 && absences <= 50);
 }
 void Student::addAbsence() {
-    absence++;
+    absences++;
 }
