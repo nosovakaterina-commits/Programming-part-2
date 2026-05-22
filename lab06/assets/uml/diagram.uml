@@ -1,0 +1,81 @@
+@startuml Car Assembly
+
+class Car {
+    - engine_: Engine
+    - transmission_: Transmission
+    - seats_: Seat
+    - wheels_: Wheel
+    - currentSpeed_: int
+    - currentFuel_: int
+    - statusMessage_: string
+    --
+    + Car(int engineVolumeMl, int wheelsCount)
+    + startEngine(): void
+    + stopEngine(): void
+    + accelerate(): void
+    + brake(): void
+    + isEngineRunning(): bool
+    + getSpeed(): int
+    + getStatusMessage(): string
+    + refuel(int fuelAmount): void
+    + getRemainingFuel(): int
+    - validateEngineState(): void
+}
+
+class Engine {
+    - volumeMl_: int
+    - currentRPM_: int
+    - currentSpeed_: int
+    - isRunning_: bool
+    --
+    + Engine(int volumeMl)
+    + start(): void
+    + stop(): void
+    + accelerate(): void
+    + brake(): void
+    + isRunning(): bool
+    + getVolumeMl(): int
+    + getRPM(): int
+    + getSpeed(): int
+}
+
+class Transmission {
+    - currentGear_: string
+    - inGear_: bool
+    --
+    + Transmission()
+    + getCurrentGear(): string
+    + isInGear(): bool
+    + shiftUp(): void
+    + shiftDown(): void
+    + setNeutral(): void
+}
+
+class Seat {
+    - count_: int
+    - comfortable_: bool
+    --
+    + Seat(int count)
+    + getCount(): int
+    + isComfortable(): bool
+    + adjust(): void
+    + clean(): void
+}
+
+class Wheel {
+    - count_: int
+    - intact_: bool
+    --
+    + Wheel(int count)
+    + getCount(): int
+    + isIntact(): bool
+    + rotate(): void
+    + repair(): void
+}
+
+Car *-- Engine : contains
+Car *-- Transmission : contains
+Car *-- Seat : contains
+Car *-- Wheel : contains
+
+@enduml
