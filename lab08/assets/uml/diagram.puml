@@ -1,0 +1,68 @@
+@startuml@startuml Vehicles Hierarchy
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor Black
+}
+
+abstract class Vehicle {
+    # brand_ : std::string
+    # powerHp_ : int
+    # weight_ : double
+    --
+    + Vehicle(brand: std::string, powerHp: int, weight: double)
+    + {abstract} ~Vehicle() = default
+    + brand() const : const std::string&
+    + powerHp() const : int
+    + weight() const : double
+    + category() const : std::string
+    + {abstract} statusLine() const : std::string
+}
+
+class Truck {
+    # maxLoadCapacity_ : double
+    # axleCount_ : int
+    # totalCargoTransported_ : int
+    --
+    + Truck(brand: std::string, powerHp: int, weight: double, maxLoadCapacity: double, axleCount: int)
+    + maxLoadCapacity() const : double
+    + axleCount() const : int
+    + totalCargoTransported() const : int
+    + transportCargo(tons: int) : void
+    + category() const : std::string override
+    + statusLine() const : std::string override
+}
+
+class RefrigeratedTruck <<final>> {
+    - minTemperature_ : double
+    - isCoolingActive_ : bool
+    --
+    + RefrigeratedTruck(brand: std::string, powerHp: int, weight: double, maxLoadCapacity: double, axleCount: int, minTemperature: double, isCoolingActive: bool)
+    + minTemperature() const : double
+    + isCoolingActive() const : bool
+    + setCooling(active: bool) : void
+    + deliveryFrozenGoods(tons: int) : void
+    + category() const : std::string override
+    + statusLine() const : std::string override
+}
+
+class PassengerCar <<final>> {
+    - passengerSeats_ : int
+    - bodyType_ : std::string
+    - totalTrips_ : int
+    --
+    + PassengerCar(brand: std::string, powerHp: int, weight: double, passengerSeats: int, bodyType: std::string)
+    + passengerSeats() const : int
+    + bodyType() const : const std::string&
+    + totalTrips() const : int
+    + driveTrip() : void
+    + category() const : std::string override
+    + statusLine() const : std::string override
+}
+
+Vehicle <|-- Truck : public
+Truck <|-- RefrigeratedTruck : public
+Vehicle <|-- PassengerCar : public
+
+@enduml
