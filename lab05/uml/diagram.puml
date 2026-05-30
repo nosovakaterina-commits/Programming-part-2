@@ -71,4 +71,9 @@ class University {
     + getDepartmentAt(idx : int) : Department*
 }
 
+University *-- Department
+Department o-- Professor
+Department o-- Course
+Course o-- Student
+
 @enduml
