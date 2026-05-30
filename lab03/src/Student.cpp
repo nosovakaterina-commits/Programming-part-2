@@ -2,7 +2,7 @@
 
 Student::Student(int id, int course, double averageGrade, bool scholarship, int absence)
 : id(id),
-course(course > 0 && course <= 4 ? course : 1),
+m_course(course > 0 && course <= 4 ? course : 1),
 averageGrade(averageGrade >= 0 && averageGrade <= 100 ? averageGrade : 0),
 scholarship(scholarship),
 absence(absence >= 0 ? absence : 0 ) {}
@@ -11,7 +11,7 @@ int Student::getId() const {
     return id;
 }
 int Student::getCourse() const {
-    return course;
+    return m_course;
 }
 double Student::getAverageGrade() const {
     return averageGrade;
@@ -28,7 +28,7 @@ void Student::setId(int value) {
 }
 void Student::setCourse(int value) {
     if (value >= 1 && value <= 4) {
-        course = value;
+        m_course = value;
     }
 }
 void Student::setAverageGrade(double value) {
@@ -46,8 +46,8 @@ void Student::setAbsence(int value) {
 }
 
 void Student::promoteToNextCourse() {
-    if (course < 4) {
-        course ++;
+    if (m_course < 4) {
+        m_course ++;
     }
 }
 void Student::updateAverageGrade(double value) {

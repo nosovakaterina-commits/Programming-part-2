@@ -73,9 +73,9 @@ class Wheel {
     + repair(): void
 }
 
-Car *-- Engine : contains
-Car *-- Transmission : contains
-Car *-- Seat : contains
-Car *-- Wheel : contains
+Car *-- Engine
+Car *-- Transmission
+Car *-- Seat
+Car *-- Wheel
 
 @enduml
