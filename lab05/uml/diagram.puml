@@ -1,0 +1,79 @@
+@startuml University_System_Diagram
+
+class Student {
+    - name : const char*
+    - id : int
+    - course : int
+    - averageGrade : double
+    - scholarship : bool
+    - absences : int
+    --
+    + getName() : const char*
+    + getId() : int
+    + getCourse() : int
+    + setCourse(value : int) : void
+    + getAverageGrade() : double
+    + setAverageGrade(value : double) : void
+    + getScholarship() : bool
+    + setScholarship(value : bool) : void
+    + getAbsences() : int
+    + addAbsence() : void
+    + isExcellentStudent() : bool
+    + canReceiveScholarship() : bool
+    + promoteToNextCourse() : void
+}
+
+class Professor {
+    - name : const char*
+    - averageSalary : double
+    - courseTitle : const char*
+    --
+    + getName() : const char*
+    + getAverageSalary() : double
+    + setAverageSalary(value : double) : void
+    + getCourseTitle() : const char*
+    + setCourseTitle(value : const char*) : void
+}
+
+class Course {
+    - title : const char*
+    - students : Student*[30]
+    - studentCount : int
+    --
+    + getTitle() : const char*
+    + addStudent(s : Student&) : bool
+    + removeStudent(id : int) : bool
+    + hasStudent(id : int) : bool
+    + getStudentAt(idx : int) : Student*
+}
+
+class Department {
+    - name : const char*
+    - courses : Course*[10]
+    - professors : Professor*[5]
+    - courseCount : int
+    - professorCount : int
+    --
+    + getName() : const char*
+    + addCourse(c : Course&) : bool
+    + addProfessor(p : Professor&) : bool
+    + getCourseAt(idx : int) : Course*
+    + getProfessorAt(idx : int) : Professor*
+}
+
+class University {
+    - name : const char*
+    - departments : Department*[5]
+    - departmentCount : int
+    --
+    + getName() : const char*
+    + addDepartment(d : Department&) : bool
+    + getDepartmentAt(idx : int) : Department*
+}
+
+University *-- Department
+Department o-- Professor
+Department o-- Course
+Course o-- Student
+
+@enduml
