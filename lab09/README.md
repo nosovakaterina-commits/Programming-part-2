@@ -4,7 +4,7 @@
 **Course:** Programming, Part 2
 **Institution:** NTU KhPI, Kharkiv, Ukraine  
 **Student:** _Nosova_Kate_  
-**Date:** _21_05_26
+**Date:** _3_06_26
 
 ---
 # Task Description
