@@ -1,0 +1,35 @@
+@startuml
+
+class Student {
+    # major : std::string
+    # gpa : double
+    + Student(studentMajor : std::string, studentGpa : double)
+    + ~Student()
+    + study() : void
+    + getGpa() : double
+}
+
+class Athlete {
+    # sportType : std::string
+    # hoursPerWeek : int
+    + Athlete(sport : std::string, hours : int)
+    + ~Athlete()
+    + train() : void
+    + getSportType() : std::string
+}
+
+class CollegeAthlete {
+    - athleteName : std::string
+    - collegeName : std::string
+    + CollegeAthlete(name : std::string,
+    major : std::string,
+    gpa : double,
+    sport : std::string,
+    hours : int,
+    college : std::string)
+    + showFullProfile() : void
+}
+
+Student <|-- CollegeAthlete : "" public ""
+Athlete <|-- CollegeAthlete : "" public ""
+@enduml
