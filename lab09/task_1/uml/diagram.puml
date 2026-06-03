@@ -1,0 +1,32 @@
+@startuml
+abstract class Device {
+    # deviceName : std::string
+    # isOn : bool
+    + Device(name : std::string)
+    + ~Device()
+    + togglePower() : void
+    + {abstract} describe() : void
+}
+
+class InputDevice {
+    # updateRateHz : int
+    + InputDevice(name : std::string, rate : int)
+    + describe() : void override
+}
+
+class OutputDevice {
+    # resolution : std::string
+    + OutputDevice(name : std::string, res : std::string)
+    + describe() : void override
+}
+
+class TouchDisplay {
+    + TouchDisplay(name : std::string, rate : int, res : std::string)
+    + describe() : void override
+}
+
+Device <|-- InputDevice : virtual public
+Device <|-- OutputDevice : virtual public
+InputDevice <|-- TouchDisplay
+OutputDevice <|-- TouchDisplay
+@enduml
