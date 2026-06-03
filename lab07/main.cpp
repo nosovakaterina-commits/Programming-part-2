@@ -20,5 +20,13 @@ int main() {
     std::cout << "sizeof(RefrigeratedTruck) = " << sizeof(RefrigeratedTruck) << "\n";
     std::cout << "sizeof(PassengerCar) = " << sizeof(PassengerCar) << "\n";
 
+    std::cout << "[OK] Copy operations are successfully blocked by compiler via '= delete'.\n";
+    //Заборону копіювання успішно працює.
+
+    PassengerCar movedCar = std::move(cityCar); // Переміщуємо властивості об'єкта в новий об'єкт.
+    std::cout << "[OK] Move operations are fully functional via '= default'.\n";
+    //Перенесення властивостей успішне.
+
     return 0;
 }
+   

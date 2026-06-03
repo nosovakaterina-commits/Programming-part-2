@@ -9,6 +9,14 @@ public:
                       double maxLoadCapacity, int axleCount, 
                       double minTemperature, bool isCoolingActive);
 
+    ~RefrigeratedTruck() override = default;                                     // Деструктор
+    
+    RefrigeratedTruck(const RefrigeratedTruck&) = delete;                        // Заборона копіювання
+    RefrigeratedTruck& operator=(const RefrigeratedTruck&) = delete;             // Заборона присвоювання
+    
+    RefrigeratedTruck(RefrigeratedTruck&&) = default;                            // Дозвіл переміщення
+    RefrigeratedTruck& operator=(RefrigeratedTruck&&) = default;                 // Дозвіл переміщення присвоюванням
+
     double minTemperature() const;
     bool isCoolingActive() const;
 

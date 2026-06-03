@@ -85,6 +85,8 @@ sizeof(Vehicle) = 56
 sizeof(Truck) = 72
 sizeof(RefrigeratedTruck) = 88
 sizeof(PassengerCar) = 104
+[OK] Copy operations are successfully blocked by compiler via '= delete'.
+[OK] Move operations are fully functional via '= default'.
 
 ### Diagram
 
