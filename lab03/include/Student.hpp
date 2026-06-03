@@ -24,7 +24,7 @@ public:
 
 private: 
     int id;
-    int course;
+    int m_course;
     double averageGrade;
     bool scholarship;
     int absences; 

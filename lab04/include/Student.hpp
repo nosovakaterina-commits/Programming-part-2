@@ -1,12 +1,13 @@
-#pragma once 
+#pragma once
 
-class Student {
-    public:
-    Student(int id, int cours, double averageGrade, bool scholarship, int absences);
+class Student
+{
+public:
+    Student(int id, int course, double averageGrade, bool scholarship, int absences);
 
     int getId() const;
     int getCourse() const;
-    double getAverageGrade() const ;
+    double getAverageGrade() const;
     bool getScholarship() const;
     int getAbsences() const;
 
@@ -22,11 +23,10 @@ class Student {
     bool canReceiveScholarship() const;
     void addAbsence();
 
-    private:
-   int id;
-   int course;
-   double averageGrade;
-   bool scholarship;
-   int absences;
-
+private:
+    int id;
+    int m_course;
+    double averageGrade;
+    bool scholarship;
+    int absences;
 };
