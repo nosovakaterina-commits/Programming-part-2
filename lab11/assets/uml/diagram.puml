@@ -1,0 +1,39 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class "GradeBook" as GradeBook {
+    - grades_ : T[N]
+    - count_ : size_t
+    --
+    + GradeBook()
+    + addGrade(grade : const T&) : bool
+    + get(index : size_t) : T
+    + count() : size_t
+    + best() : T
+    + average() : double
+    + capacity() : size_t
+}
+
+class "NamedRecord" as NamedRecord {
+    - name_ : NameType
+    - value_ : ValueType
+    --
+    + NamedRecord()
+    + NamedRecord(name : const NameType&, value : const ValueType&)
+    + getName() : NameType
+    + getValue() : ValueType
+    + setName(name : const NameType&) : void
+    + setValue(value : const ValueType&) : void
+}
+
+class "GradeThreshold" as GradeThreshold {
+    {static} + pass() : T
+    {static} + excellent() : T
+}
+
+class "GradeThreshold" as GradeThresholdSpecialized {
+    {static} + pass() : double
+    {static} + excellent() : double
+}
+
+@enduml
