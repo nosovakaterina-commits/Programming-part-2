@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Student {
+    - id_ : int
+    - name_ : std::string
+    --
+    + Student()
+    + Student(id : int, name : const std::string&)
+    + ~Student()
+    + getId() : int
+    + getName() : std::string
+}
+
+class Student_array {
+    - data_ : Student*
+    - size_ : size_t
+    --
+    + explicit Student_array(size : size_t)
+    + ~Student_array()
+    + Student_array(const Student_array& other)
+    + operator=(const Student_array& other)
+    + Student_array(Student_array&& other) noexcept
+    + operator=(Student_array&& other) noexcept
+    + at(index : size_t) : Student&
+    + size() : size_t
+}
+
+class "Simple_ptr" as Simple_ptr {
+    - ptr_ : T*
+    --
+    + explicit Simple_ptr(ptr : T*)
+    + ~Simple_ptr()
+    + operator*() : T&
+    + operator->() : T*
+    - Simple_ptr(const Simple_ptr&) = delete
+    - operator=(const Simple_ptr&) = delete
+}
+
+class Smart_nodes {
+    + student : std::shared_ptr<Student>
+    + next : std::shared_ptr<Smart_nodes>
+    + prev : std::weak_ptr<Smart_nodes>
+    --
+    + explicit Smart_nodes(s : std::shared_ptr<Student>)
+    + ~Smart_nodes()
+}
+
+Student_array o--  Student 
+Smart_nodes  o--  Student 
+Smart_nodes o-- Smart_nodes
+Smart_nodes ..> Smart_nodes
+
+@endif
