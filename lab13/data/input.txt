@@ -1,0 +1,6 @@
+ticket=101; user=Alice; priority=high; response=1.5; status=open; email=alice.smith@gmail.com
+ticket=102; user=Bob; priority=low; response=4.2; status=closed; email=bob_it_support@khpi.edu.ua
+ticket=103; user=Charlie; priority=invalid_priority; response=0.5; status=open; email=charlie@test.com
+ticket=-5; user=Driver; priority=medium; response=2.0; status=open; email=driver@mail.com
+ticket=104; user=Kate; priority=medium; response=0.0; status=open; email=kate.nosova@invalid-email
+ticket=105; user=David; priority=medium; response=12.8; status=closed; email=david123@yahoo.com
