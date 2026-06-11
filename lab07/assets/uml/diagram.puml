@@ -1,0 +1,70 @@
+@startuml Vehicles Hierarchy
+
+class Vehicle {
+    # brand_: std::string
+    # powerHp_: int
+    # weight_: double
+    --
+    + Vehicle(brand, powerHp, weight)
+    + ~Vehicle() = default
+    - Vehicle(const Vehicle&) = delete
+    - operator=(const Vehicle&) = delete
+    + Vehicle(Vehicle&&) = default
+    + operator=(Vehicle&&) = default
+    --
+    + brand() const: const std::string&
+    + powerHp() const: int
+    + weight() const: double
+    + {virtual} category() const: std::string
+    + {virtual} statusLine() const: std::string
+}
+
+class Truck {
+    # maxLoadCapacity_: double
+    # axleCount_: int
+    # totalCargoTransported_: int
+    --
+    + Truck(brand, powerHp, weight, maxLoadCapacity, axleCount)
+    --
+    + maxLoadCapacity() const: double
+    + axleCount() const: int
+    + totalCargoTransported() const: int
+    + transportCargo(tons: int): void
+    + {override} category() const: std::string
+    + {override} statusLine() const: std::string
+}
+
+class RefrigeratedTruck <<final>> {
+    - minTemperature_: double
+    - isCoolingActive_: bool
+    --
+    + RefrigeratedTruck(brand, powerHp, weight, maxLoadCapacity, axleCount, minTemperature, isCoolingActive)
+    --
+    + minTemperature() const: double
+    + isCoolingActive() const: bool
+    + setCooling(active: bool): void
+    + deliveryFrozenGoods(tons: int): void
+    + {override} category() const: std::string
+    + {override} statusLine() const: std::string
+}
+
+class PassengerCar <<final>> {
+    - passengerSeats_: int
+    - bodyType_: std::string
+    - totalTrips_: int
+    --
+    + PassengerCar(brand, powerHp, weight, passengerSeats, bodyType)
+    --
+    + passengerSeats() const: int
+    + bodyType() const: const std::string&
+    + totalTrips() const: int
+    + driveTrip(): void
+    + {override} category() const: std::string
+    + {override} statusLine() const: std::string
+}
+
+Vehicle <|-- Truck
+Truck <|-- RefrigeratedTruck
+Vehicle <|-- PassengerCar
+
+@enduml
